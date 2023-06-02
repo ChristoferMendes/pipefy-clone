@@ -1,15 +1,15 @@
 import { Container, Label } from "./styles.js";
 
-export function Card() {
-  const avatarURL = 'https://avatars.githubusercontent.com/u/107426464?v=4'
-
+export function Card({ data }) {
   return (
     <Container>
       <header>
-        <Label color="#7159c1" />
+        {data.labels.map((label) => (
+          <Label key={label} color={label} />
+        ))}
       </header>
-      <p>Make migrations with TypeORM 0.3</p>
-      <img src={avatarURL} alt="Cristofer Mendes name" />
+      <p>{data.content}</p>
+      {data.user && <img src={data.user} alt={`User image`} />}
     </Container>
   );
 }
