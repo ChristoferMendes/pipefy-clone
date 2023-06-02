@@ -1,9 +1,13 @@
-import { GlobalStyleComponent } from "styled-components"
+import { Header } from "./components/Header/Header";
+import { GlobalStyle } from "./styles/global";
 
 function App() {
   return (
-    <GlobalStyleComponent />
-  )
+    <>
+      <Header />
+      <GlobalStyle />
+    </>
+  );
 }
 
-export default App
+export default App;
