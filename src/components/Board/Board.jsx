@@ -1,15 +1,13 @@
-import { List } from "../List/List.jsx";
 import { Container } from "./styles.js";
-import { loadLists } from "../../services/api";
-
-const lists = loadLists();
+import { BoardProvider } from "./contet.jsx";
+import { BoardList } from "../BoardList/BoardList.jsx";
 
 export function Board() {
   return (
-    <Container>
-      {lists.map((list) => (
-        <List key={list.title} data={list} />
-      ))}
-    </Container>
+    <BoardProvider>
+      <Container>
+       <BoardList />
+      </Container>
+    </BoardProvider>
   );
 }
